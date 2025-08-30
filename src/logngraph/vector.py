@@ -34,8 +34,17 @@ class Vec2D:
     def copy(self) -> Self:
         return Vec2D(self.x, self.y)
 
-    def __mul__(self, other: float) -> Self:
-        return Vec2D(self.x * other, self.y * other)
+    def cross(self, other: Self) -> Self:
+        return self.x * other.y - self.y * other.x
+
+    def __mul__(self, other: float | Self) -> Self:
+        if isinstance(other, float):
+            return Vec2D(self.x * other, self.y * other)
+        elif isinstance(other, Vec2D):
+            dot = self.x * other.x + self.y * other.y
+            return dot
+        else:
+            raise ValueError("Unsupported type")
 
     def __truediv__(self, other: float):
         return Vec2D(self.x / other, self.y / other)
@@ -83,7 +92,7 @@ class Vec2D:
         return f"({self.x}; {self.y})"
 
     def __repr__(self):
-        return self.__str__()
+        return "Vec2D" + self.__str__()
 
     def __hash__(self):
         return (hash(self.x) + 1) * (hash(self.y) + 1) + hash(self.__repr__())

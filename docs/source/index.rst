@@ -11,6 +11,7 @@ A Python 3.12 package for logging and drawing primitives.
    tutorial
    logging
    graphics
+   vector
    api
    examples
    thanks
