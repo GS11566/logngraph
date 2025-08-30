@@ -29,9 +29,8 @@ Basic graphics example:
    window.update()
 
    # Main loop
-   running = True
-   while running:
-       running = window.handle_events()
+   while window.running:
+       window.handle_events()
 
 
 Complete Example
@@ -56,9 +55,8 @@ Complete Example
        window.update()
 
        # Main loop
-       running = True
-       while running:
-           running = window.handle_events()
+       while window.running:
+           window.handle_events()
 
    except Exception as e:
        logger.error(f"Error in application: {e}")

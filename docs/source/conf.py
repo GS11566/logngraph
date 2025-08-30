@@ -1,6 +1,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../src'))
+import importlib.metadata
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -13,7 +14,7 @@ sys.path.insert(0, os.path.abspath('../../src'))
 project = 'logngraph'
 copyright = '2025, Vadim Gladushev'
 author = 'Vadim Gladushev'
-release = '0.0.15'
+release = importlib.metadata.version("logngraph")
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

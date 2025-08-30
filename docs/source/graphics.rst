@@ -83,8 +83,8 @@ Window Management
    # Update display
    window.update()
 
-   # Handle events (returns False when window should close)
-   running = window.handle_events()
+   # Handle events
+   window.handle_events()
 
    # Screenshot
    window.screenshot("screenshot.png")
