@@ -22,6 +22,7 @@ keywords = ["log", "logging", "graphics", "primitives", "pygame"]
 dependencies = ["pygame"]
 
 [project.urls]
+Documetation = "https://logngraph.readthedocs.io/en/latest"
 Repository = "https://github.com/GS11566/logngraph.git"
 Issues = "https://github.com/GS11566/logngraph/issues"
 

@@ -4,7 +4,6 @@ with contextlib.redirect_stdout(None):
 from logngraph.errors import *
 from typing import Callable
 from logngraph.vector import Vec2D
-import math
 
 __all__ = [
     "Window",
@@ -43,7 +42,7 @@ class Window:
         Fill the window with given color.
 
         :param color: Color to fill the window with.
-        :return:
+        :return: None
         """
         self.screen.fill(color)
 
@@ -51,7 +50,7 @@ class Window:
         """
         Updates the window.
 
-        :return:
+        :return: None
         """
         if self.running:
             pygame.display.flip()
@@ -60,7 +59,7 @@ class Window:
         """
         Stops the window.
 
-        :return:
+        :return: None
         """
         self.running = False
 
@@ -68,7 +67,7 @@ class Window:
         """
         Handles event (quit, keypresses, etc.)
 
-        :return:
+        :return: None
         """
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -82,7 +81,7 @@ class Window:
         Save a screenshot of the window to a file.
 
         :param filename: Path to the file to save the screenshot to.
-        :return:
+        :return: None
         """
         pygame.image.save(self.screen, filename)
 
@@ -93,7 +92,7 @@ class Window:
         :param left_top: Leftmost top coordinates of the rectangle.
         :param width_height: Width and height of the rectangle.
         :param color: Fill color of the rectangle.
-        :return:
+        :return: None
         """
         x, y = left_top
         w, h = width_height
@@ -123,7 +122,7 @@ class Window:
         :param center: Center position of the circle.
         :param radius: Radius of the circle.
         :param color: Fill color of the circle.
-        :return:
+        :return: None
         """
         center = (center[0] + self.translation.x, center[1] + self.translation.y)
         pygame.draw.circle(self.screen, color, center, radius)
@@ -136,7 +135,7 @@ class Window:
         :param end_pos: Ending position of the line.
         :param color: Color of the line.
         :param width: Width of the line.
-        :return:
+        :return: None
         """
         x1, y1 = start_pos
         x2, y2 = end_pos
@@ -162,7 +161,7 @@ class Window:
 
         :param args: x, y pairs of coordinates of the vertices of the polygon. E.g. `(0, 0), (15, 60), (123, 624)`, or `0, 0, 15, 60, 123, 624`.
         :param color: Fill color of the polygon.
-        :return:
+        :return: None
         """
         try:
             if len(args) % 2 == 0:
@@ -191,7 +190,7 @@ class Window:
         :param antialias: Enable antialiasing of the text.
         :param font: Font of the text.
         :param size: Font size of the text.
-        :return:
+        :return: None
         """
         if type(font) is str:
             try:
@@ -211,7 +210,7 @@ class Window:
 
         :param key: Key press. Must be a valid pygame key name (e.g., 'a', 'space', 'enter').
         :param function: Function to call when the key is pressed.
-        :return:
+        :return: None
         """
         try:
             key_constant = pygame.key.key_code(key)
