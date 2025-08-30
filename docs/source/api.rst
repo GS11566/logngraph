@@ -14,6 +14,7 @@ Logging Levels
 .. automodule:: logngraph.log.levels
    :members:
    :show-inheritance:
+   :undoc-members:
 
 Graphics Module
 ---------------
@@ -32,6 +33,8 @@ Vectors
 .. automodule:: logngraph.vector
    :members:
    :show-inheritance:
+   :inherited-members:
+   :undoc-members:
 
 Errors
 ------
