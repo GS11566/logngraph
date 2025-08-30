@@ -16,6 +16,7 @@ Basic logging example:
    logger = get_logger(name, level=INFO)
    logger.info("Application started")
 
+
 Basic graphics example:
 
 .. code-block:: python
@@ -31,7 +32,7 @@ Basic graphics example:
    running = True
    while running:
        running = window.handle_events()
-`
+
 
 Complete Example
 ----------------

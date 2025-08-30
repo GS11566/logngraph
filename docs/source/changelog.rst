@@ -2,7 +2,7 @@ Changelog
 =========
 
 Version 0.0.14
--------------
+--------------
 
 - Still beta, work in progress
 - Basic logging functionality with multiple levels
