@@ -21,6 +21,11 @@ license-files = ["LICEN[CS]E*"]
 keywords = ["log", "logging", "graphics", "primitives", "pygame"]
 dependencies = ["pygame"]
 
+[project.urls]
+Documentation = ""
+Repository = "https://github.com/GS11566/logngraph.git"
+Issues = "https://github.com/GS11566/logngraph/issues"
+
 [build-system]
 requires = ["setuptools >= 77.0.3"]
 build-backend = "setuptools.build_meta"
