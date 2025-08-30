@@ -1,1 +1,2 @@
 pygame
+sphinx-rtd-theme
