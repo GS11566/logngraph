@@ -9,6 +9,13 @@ Logging Module
    :show-inheritance:
    :undoc-members:
 
+Logger class
+~~~~~~~~~~~~
+.. automodule:: logngraph.log.Logger
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 Logging Levels
 ~~~~~~~~~~~~~~
 
@@ -16,6 +23,7 @@ Logging Levels
    :members:
    :show-inheritance:
    :undoc-members:
+   :inherited-members:
 
 Graphics Module
 ---------------
