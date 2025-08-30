@@ -13,6 +13,7 @@ A Python 3.12 package for logging and drawing primitives.
    graphics
    api
    examples
+   thanks
    changelog
 
 Indices and tables
