@@ -1,0 +1,16 @@
+*token.txt
+.venv/
+upload.txt
+tests/
+dist/
+*.egg-info/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+__pycache__/
+.venv
+venv/
+ENV/
+*.env

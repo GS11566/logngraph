@@ -1,0 +1,26 @@
+[project]
+name = "logngraph"
+version = "0.0.14"
+authors = [
+    { name = "Vadim Gladushev", email = "vadim.gladushev@mail.ru" },
+]
+description = "Draw primitives and save your logs!"
+readme = "README.rst"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+keywords = ["log", "logging", "graphics", "primitives", "pygame"]
+dependencies = ["pygame"]
+
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
