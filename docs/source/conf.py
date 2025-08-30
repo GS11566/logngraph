@@ -24,10 +24,33 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.autosummary',
+    'sphinx_automodapi.automodapi',
+    'sphinx_toolbox.more_autodoc.variables',
 ]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+
+
+# Include all members, including variables
+autodoc_default_options = {
+    'members': True,
+    'undoc-members': True,
+    'inherited-members': False,
+    'show-inheritance': True,
+    'special-members': '__init__',
+}
+
+# Include variables in autosummary tables
+autosummary_generate = True
+
+# For automodapi:cite[1]
+automodapi_toctreedirnm = 'api'
+automodapi_inheritance_diagram = False
+
+# For type hints
+autodoc_typehints = "description"
 
 
 # -- Options for HTML output -------------------------------------------------
