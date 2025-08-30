@@ -2,7 +2,7 @@ import contextlib
 with contextlib.redirect_stdout(None):
     import pygame
 from logngraph.errors import *
-from typing import Callable
+from typing import Callable, Iterable, Any
 from logngraph.vector import Vec2D
 
 __all__ = [
@@ -18,7 +18,11 @@ class Window:
         pygame.display.set_caption(title)
 
         self.running = True
-        self.key_bindings: dict[int, Callable] = {}
+        self.keydown_bindings: dict[int, Callable] = {}
+        self.keydown_args: dict[int, Iterable[Any]] = {}
+
+        self.keyup_bindings: dict[int, Callable] = {}
+        self.keyup_args: dict[int, Iterable[Any]] = {}
 
         self.angle = 0
         self.translation = Vec2D(0, 0)
@@ -73,8 +77,11 @@ class Window:
             if event.type == pygame.QUIT:
                 self.running = False
             elif event.type == pygame.KEYDOWN:
-                if event.key in self.key_bindings:
-                    self.key_bindings[event.key]()
+                if event.key in self.keydown_bindings:
+                    self.keydown_bindings[event.key](*self.keydown_args[event.key])
+            elif event.type == pygame.KEYUP:
+                if event.key in self.keyup_bindings:
+                    self.keyup_bindings[event.key](*self.keyup_args[event.key])
 
     def screenshot(self, filename: str) -> None:
         """
@@ -85,7 +92,7 @@ class Window:
         """
         pygame.image.save(self.screen, filename)
 
-    def rect(self, left_top: tuple[float, float], width_height: tuple[float, float], color="#ffffff") -> None:
+    def rect(self, left_top: tuple[float, float] | Vec2D, width_height: tuple[float, float] | Vec2D, color="#ffffff") -> None:
         """
         Draw a rectangle with given width and height and at given coordinates.
 
@@ -115,7 +122,7 @@ class Window:
         # Draw the polygon using the transformed corners
         pygame.draw.polygon(self.screen, color, transformed_corners)
 
-    def circle(self, center: tuple[float, float], radius: float, color="#ffffff") -> None:
+    def circle(self, center: tuple[float, float] | Vec2D, radius: float, color="#ffffff") -> None:
         """
         Create circle with center at center and radius=radius.
 
@@ -127,7 +134,7 @@ class Window:
         center = (center[0] + self.translation.x, center[1] + self.translation.y)
         pygame.draw.circle(self.screen, color, center, radius)
 
-    def line(self, start_pos: tuple[float, float], end_pos: tuple[float, float], color="#ffffff", width: int = 1) -> None:
+    def line(self, start_pos: tuple[float, float] | Vec2D, end_pos: tuple[float, float] | Vec2D, color="#ffffff", width: int = 1) -> None:
         """
         Draw a line from start_pos to end_pos with width=width and color=color.
 
@@ -155,7 +162,7 @@ class Window:
 
         pygame.draw.line(self.screen, color, v[0], v[1], width=width)
 
-    def polygon(self, *args: float | tuple[float, float], color="#ffffff") -> None:
+    def polygon(self, *args: float | tuple[float, float] | Vec2D, color="#ffffff") -> None:
         """
         Draw a polygon with given position arguments.
 
@@ -203,17 +210,38 @@ class Window:
         text = pygame.transform.rotate(text, self.angle)
         self.screen.blit(text, textRect)
 
-    def bind_key(self, key: str, function: Callable) -> None:
+    def bind_keydown(self, key: str, function: Callable, args: Iterable[Any] = None) -> None:
         """
         Bind given keypress to given function.
         Function will be called when the key is pressed.
 
         :param key: Key press. Must be a valid pygame key name (e.g., 'a', 'space', 'enter').
         :param function: Function to call when the key is pressed.
+        :param args: Arguments to pass to the function.
         :return: None
         """
+        args = args or ()
         try:
             key_constant = pygame.key.key_code(key)
-            self.key_bindings[key_constant] = function
+            self.keydown_bindings[key_constant] = function
+            self.keydown_args[key_constant] = args
+        except ValueError:
+            raise InvalidKeyError(f"Invalid key name: {key}")
+
+    def bind_keyup(self, key: str, function: Callable, args: Iterable[Any] = None) -> None:
+        """
+        Bind given keypress to given function.
+        Function will be called when the key is pressed.
+
+        :param key: Key press. Must be a valid pygame key name (e.g., 'a', 'space', 'enter').
+        :param function: Function to call when the key is pressed.
+        :param args: Arguments to pass to the function.
+        :return: None
+        """
+        args = args or ()
+        try:
+            key_constant = pygame.key.key_code(key)
+            self.keyup_bindings[key_constant] = function
+            self.keyup_args[key_constant] = args
         except ValueError:
             raise InvalidKeyError(f"Invalid key name: {key}")

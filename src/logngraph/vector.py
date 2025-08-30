@@ -59,6 +59,26 @@ class Vec2D:
         yield self.x
         yield self.y
 
+    def __getitem__(self, index: int | str | slice):
+        if type(index) is int:
+            if index == 0:
+                return self.x
+            elif index == 1:
+                return self.y
+            else:
+                raise IndexError("Index out of range")
+        elif type(index) is str:
+            if index == "x":
+                return self.x
+            elif index == "y":
+                return self.y
+            else:
+                raise KeyError("Not such key")
+        elif type(index) is slice:
+            return self.x, self.y
+        else:
+            raise TypeError("Index must be int or str")
+
     def __str__(self):
         return f"({self.x}; {self.y})"
 
