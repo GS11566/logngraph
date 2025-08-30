@@ -1,6 +1,15 @@
 Changelog
 =========
 
+Version 0.0.16
+--------------
+
+- Still beta, still WIP
+- Removed Herobrine
+- Added Window.set_title()
+- Added dot and cross products to Vec2D
+- Worked on documentation
+
 Version 0.0.15
 --------------
 
