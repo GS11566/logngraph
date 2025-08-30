@@ -50,6 +50,16 @@ Vectors
    :inherited-members:
    :undoc-members:
 
+Vec2D class
+~~~~~~~~~~~
+
+.. autoclass:: logngraph.vector.Vec2D
+   :members:
+   :special-members: __init__, __add__, __sub__, __mul__, __truediv__, __eq__, __neg__, __getitem__, __iter__, __repr__, __str__, __cmp__, __hash__
+   :undoc-members:
+   :show-inheritance:
+   :inherited-members:
+
 Errors
 ------
 
