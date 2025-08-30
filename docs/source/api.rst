@@ -44,12 +44,7 @@ Window Class
 Vectors
 -------
 
-.. automodule:: logngraph.vector
-   :members:
-   :show-inheritance:
-   :inherited-members:
-   :undoc-members:
-   :no-index:
+
 
 Vec2D class
 ~~~~~~~~~~~
