@@ -18,9 +18,7 @@ Creating a Window
        title="My Window",
        width=800,
        height=600,
-       resizable=True,
-       fullscreen=False,
-       vsync=True
+       resizable=True
    )
 
 Drawing Primitives
@@ -32,16 +30,16 @@ Shapes
 .. code-block:: python
 
    # Rectangle
-   window.rect((x, y), (width, height), color="#ff0000", width=0)
+   window.rect((x, y), (width, height), color="#ff0000")
 
    # Circle
-   window.circle((center_x, center_y), radius, color="#00ff00", width=0)
+   window.circle((center_x, center_y), radius, color="#00ff00")
 
    # Line
-   window.line((start_x, start_y), (end_x, end_y), color="#0000ff", width=1)
+   window.line((start_x, start_y), (end_x, end_y), color="#0000ff", width=15)
 
    # Polygon
-   window.polygon((x1, y1), (x2, y2), (x3, y3), color="#ffff00", width=0)
+   window.polygon((x1, y1), (x2, y2), (x3, y3), color="#ffff00")
 
 Text
 ~~~~
@@ -49,7 +47,7 @@ Text
 .. code-block:: python
 
    window.write(
-       x, y,
+       (x, y),
        text="Hello World",
        color="#ffffff",
        bg_color=None,  # Transparent background
@@ -64,16 +62,10 @@ Transformations
 .. code-block:: python
 
    # Translation
-   window.translate(dx, dy)  # Move origin
+   window.translate(dx, dy)  # Set origin
 
    # Rotation
-   window.rotate(angle)      # Rotate around current origin
-
-   # Scaling
-   window.scale(sx, sy)      # Scale coordinates
-
-   # Reset transformations
-   window.reset_transform()
+   window.rotate(angle)      # Set rotation around current origin
 
 Window Management
 -----------------

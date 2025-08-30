@@ -6,7 +6,7 @@ We would like to extend our gratitude to the following individuals and projects:
 Contributors
 ------------
 
-- Tewyn2 - For testing and helping with docs
+- Tewyn2 - For testing the package and helping with docs
 
 Open Source Projects
 --------------------
@@ -22,7 +22,7 @@ Inspiration
 Community Support
 -----------------
 
-Right now - no other contributors.
+Right now - noone has contributed.
 
 .. note::
    If you'd like to contribute to LogNGraph, please visit our GitHub repository at https://github.com/GS11566/logngraph

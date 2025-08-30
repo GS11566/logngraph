@@ -41,6 +41,10 @@ class Window:
     def translate(self, x: float, y: float) -> None:
         self.translation = Vec2D(x, y)
 
+    @staticmethod
+    def set_title(title: str) -> None:
+        pygame.display.set_caption(title)
+
     def fill(self, color: tuple[int, int, int] | str) -> None:
         """
         Fill the window with given color.

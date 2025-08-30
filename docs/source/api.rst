@@ -7,6 +7,7 @@ Logging Module
 .. automodule:: logngraph.log
    :members:
    :show-inheritance:
+   :undoc-members:
 
 Logging Levels
 ~~~~~~~~~~~~~~
@@ -18,6 +19,11 @@ Logging Levels
 
 Graphics Module
 ---------------
+
+.. automodule:: logngraph.graph
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 Window Class
 ~~~~~~~~~~~~
