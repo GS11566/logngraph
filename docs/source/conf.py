@@ -25,7 +25,6 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.intersphinx',
     'sphinx.ext.autosummary',
-    'sphinx_automodapi.automodapi',
     'sphinx_toolbox.more_autodoc.variables',
 ]
 
@@ -44,10 +43,6 @@ autodoc_default_options = {
 
 # Include variables in autosummary tables
 autosummary_generate = True
-
-# For automodapi:cite[1]
-automodapi_toctreedirnm = 'api'
-automodapi_inheritance_diagram = False
 
 # For type hints
 autodoc_typehints = "description"
