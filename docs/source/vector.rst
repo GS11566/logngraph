@@ -3,7 +3,7 @@ Vec2D Class
 
 The ``Vec2D`` class provides mathematical vector operations.
 
-.. autoclass:: logngraph.vector.Vector
+.. autoclass:: logngraph.vector.Vec2D
    :members:
    :special-members: __init__, __add__, __sub__, __mul__, __truediv__, __eq__, __neg__, __getitem__, __iter__, __repr__, __str__, __cmp__, __hash__
    :undoc-members:
