@@ -49,6 +49,7 @@ Vectors
    :show-inheritance:
    :inherited-members:
    :undoc-members:
+   :no-index:
 
 Vec2D class
 ~~~~~~~~~~~
