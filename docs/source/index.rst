@@ -1,7 +1,7 @@
 LogNGraph Documentation
 =======================
 
-A Python 3.12 package for logging and graphics primitives.
+A Python 3.12 package for logging and drawing primitives.
 
 .. toctree::
    :maxdepth: 2

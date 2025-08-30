@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.abspath('../../src'))
 project = 'logngraph'
 copyright = '2025, Vadim Gladushev'
 author = 'Vadim Gladushev'
-release = '0.0.14'
+release = '0.0.15'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
