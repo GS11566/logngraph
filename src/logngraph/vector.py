@@ -14,6 +14,8 @@ class Vec2D:
         return (other - self).mag()
 
     def norm(self) -> Self:
+        if self.mag() == 0:
+            return Vec2D(0, 0)
         return self / self.mag()
 
     def rotate(self, degrees: float, pivot: Self = None) -> Self:

@@ -1,8 +1,15 @@
 Changelog
 =========
 
+Version 0.0.19
+--------------
+
+- Still beta, WIP
+- Fixed error in Vec2D.norm()
+
 Version 0.0.18
 --------------
+
 - Still beta, WIP
 - Fixed error in Vec2D multiplication
 
