@@ -37,6 +37,13 @@ class Vec2D:
     def cross(self, other: Self) -> Self:
         return self.x * other.y - self.y * other.x
 
+    def limit(self, max_mag: float | int) -> Self:
+        orig_mag = self.mag()
+        mag = orig_mag
+        if orig_mag >= max_mag:
+            mag = max_mag
+        return self.norm() * mag
+
     def __mul__(self, other: float | Self) -> Self:
         if isinstance(other, float):
             return Vec2D(self.x * other, self.y * other)

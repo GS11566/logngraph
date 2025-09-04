@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Version 0.0.17
+--------------
+
+- Still beta, WIP
+- Added limit function to Vec2D
+
 Version 0.0.16
 --------------
 

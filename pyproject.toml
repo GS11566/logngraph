@@ -1,6 +1,6 @@
 [project]
 name = "logngraph"
-version = "0.0.16"
+version = "0.0.17"
 authors = [
     { name = "Vadim Gladushev", email = "vadim.gladushev@mail.ru" },
 ]
