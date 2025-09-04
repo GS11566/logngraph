@@ -44,8 +44,8 @@ class Vec2D:
             mag = max_mag
         return self.norm() * mag
 
-    def __mul__(self, other: float | Self) -> Self:
-        if isinstance(other, float):
+    def __mul__(self, other: float | int | Self) -> Self:
+        if isinstance(other, float) or isinstance(other, int):
             return Vec2D(self.x * other, self.y * other)
         elif isinstance(other, Vec2D):
             dot = self.x * other.x + self.y * other.y

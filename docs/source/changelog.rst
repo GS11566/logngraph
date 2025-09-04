@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Version 0.0.18
+--------------
+- Still beta, WIP
+- Fixed error in Vec2D multiplication
+
 Version 0.0.17
 --------------
 
